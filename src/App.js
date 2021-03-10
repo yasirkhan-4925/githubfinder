@@ -27,7 +27,7 @@ class App extends Component{
          <Navbar title="GitHub Finder" icon = "fab fa-github" />
 
          <div className="container">
-         <Users users={this.state.users}/>
+         <Users users={this.state.users} loading= {this.state.loading}/>
          </div>
         
         

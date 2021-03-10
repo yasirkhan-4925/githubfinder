@@ -1,16 +1,17 @@
 import React ,{Component} from 'react'
 import '../App.css'
 import Useritem from '../components/Useritem'
+import Loader from '../components/Loader'
 
 
-const  Users = ({users})=> {
+const  Users = ({users , loading})=> {
       
-    
-    
-
-    
-
-
+      if(loading){
+          return(
+             <Loader/>
+          )
+      }
+      else{
         return(
             <div id="Users"> 
                 {users.map( (user)=> (
@@ -19,6 +20,13 @@ const  Users = ({users})=> {
             </div>
            
         )
+      }
+    
+        
+    
+
+
+       
    
     
 
