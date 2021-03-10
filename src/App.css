@@ -1,38 +1,160 @@
-.App {
-  text-align: center;
+
+
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Roboto', sans-serif;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.container{
+  margin-left: auto ;
+  margin-right: auto;
+  width: 90%;
+  
+
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+
+
+
+
+#navbarContainer{
+  width: 100%;
+  background-color:#2d3436;
+  padding: 15px 20px;
+  
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+#navbarContainer .navbar{
+     width: 90%;
+     margin-left: auto;
+     margin-right: auto;
+}
+
+
+.navbar{
+  margin: 5px auto;
+}
+.navbar h1{
+  color: white;
+  padding-left: 10px;
+}
+
+.navbarLogo{
   display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+}
+
+.navbarLogo .fab{
+  font-size: 30px;
   color: white;
 }
 
-.App-link {
-  color: #61dafb;
+
+.userItemCard-img{
+    border-radius: 50%;
+    height: 100px;
+    width: 150px;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+#userItemCard{
+  text-align: center;
+  
+  -webkit-box-shadow: 0 0 10px grey;
+        box-shadow: 0 0 10px grey;
+  margin-top: 15px;
+  height: 300px;
+
+  width:300px;
+  
+  
+  
+
+
+  
+  
+  
+  display: flex;
+  flex-direction: column;
+  margin: 10px 10px;
+
+  
+  align-items: center;
+  flex-flow: column wrap;
+  padding-top: 20px;
+  position: relative;
+  border: solid 0.5px grey;
+  flex: 30%
+
+  
+}
+
+#userItemCard h3{
+  font-size: 30px;
+  margin-top: 10px;
+}
+
+#userItemCard a{
+  text-decoration: none;
+  background-color: #2d3436;
+  color:white;
+  padding : 10px 20px;
+  border-radius: 8px;
+  transition: background-color 0.5s;
+  position:absolute;
+  bottom: 10%;
+  
+  
+  
+
+  
+}
+
+#userItemCard a:hover{
+ 
+   background-color: gray;
+   color: black;
+   
+  
+
+  
+}
+
+
+#Users{
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  flex-wrap: wrap;
+  
+}
+
+
+@media(max-width:486px){
+  #userItemCard{
+    text-align: center;
+    
+    -webkit-box-shadow: 0 0 10px grey;
+          box-shadow: 0 0 10px grey;
+    margin-top: 15px;
+    height: 300px;
+    width:300px;
+    
+    
+    
+    display: flex;
+    flex-direction: column;
+    margin: 10px 10px;
+  
+    
+    align-items: center;
+    flex-flow: column wrap;
+    padding-top: 20px;
+    position: relative;
+    border: solid 0.5px grey;
+    flex: 50%
+  
+    
   }
-  to {
-    transform: rotate(360deg);
-  }
+  
 }
