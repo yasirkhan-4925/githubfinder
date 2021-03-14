@@ -6,12 +6,12 @@ import Loader from '../components/Loader'
 
 const  Users = ({users , loading})=> {
       
-      if(loading){
-          return(
-             <Loader/>
-          )
-      }
-      else{
+    //   if(loading){
+    //       return(
+    //          <Loader/>
+    //       )
+    //   }
+    //   else{
         return(
             <div id="Users"> 
                 {users.map( (user)=> (
@@ -20,8 +20,7 @@ const  Users = ({users , loading})=> {
             </div>
            
         )
-      }
-    
+      
         
     
 

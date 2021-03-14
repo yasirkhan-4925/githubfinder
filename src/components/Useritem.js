@@ -1,5 +1,6 @@
 import React from 'react'
 import '../App.css';
+import {Link} from 'react-router-dom'
 
 const  Useritem = ({user:{login,avatar_url, html_url}})=>  {  
 
@@ -14,7 +15,8 @@ const  Useritem = ({user:{login,avatar_url, html_url}})=>  {
            <div id="userItemCard">
                   <img src={avatar_url} className="userItemCard-img" alt=""/>
                   <h3>{login}</h3>
-                  <a href={html_url}>See More</a>
+                  <Link to ={`/profile/${login}`} >See More</Link>
+                
                   
            </div>
        )

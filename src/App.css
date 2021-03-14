@@ -43,6 +43,10 @@
 
 .navbar{
   margin: 5px auto;
+  display: flex;
+  justify-content:space-between;
+  align-items: center;
+
 }
 .navbar h1{
   color: white;
@@ -228,5 +232,119 @@
   font-weight: bold;
   padding: 15px 10px;
   margin: 10px 0px;
+  transform: translateY(-1200px);
+  animation:alertanimate 0.5s ease-out forwards;
 
 }
+
+@keyframes alertanimate{
+  to{
+    transform: translateY(0);
+  }
+}
+
+.navlinks{
+  color: white;
+
+}
+.navlinks ul li{
+  list-style-type: none;
+  padding: 0px 10px;
+  text-decoration: none;
+  color: white;
+
+
+}
+
+.navlinks ul {
+  display: flex;
+  justify-items: center;
+  justify-content: center;
+}
+
+.about{
+  margin-top: 15px;
+}
+
+.backToSearch{
+  background-color: #2d3436 ;
+  color: white;
+  text-decoration: none;
+  padding: 15px 10px;
+  margin-top: 30px;
+  
+}
+.searchButton{
+  margin-top: 30px;
+}
+
+.profilebox{
+  display: flex;
+  margin-top: 100px;
+
+}
+
+.profilepic{
+   flex:50%;
+ 
+   padding: 20px 5px;
+   display: flex;
+   flex-direction: column ;
+   align-items: center;
+   justify-content: center;
+   background-color: 	#F0F0F0;
+  
+}
+.biodata{
+   flex:50%;
+ 
+   margin-left: 5px;
+   background-color: 	#F0F0F0;
+}
+.profilepic img{
+  width: 150px;
+  border-radius: 50%;
+  margin-top: -100px;
+  border-bottom: solid 4px white;
+}
+
+.profilepic h3{
+  margin-top: 20px;
+}
+.profilepic a{
+  margin-top: 30px;
+  text-decoration: none;
+  background-color: #2d3436;
+  padding: 10px 20px;
+  color: white;
+}
+
+.biodata_inside{
+  padding: 10px 10px;
+}
+
+.biodata_inside h3{
+  line-break: 1.6 rem;
+  margin: 15px 0px 0px 0px;
+}
+
+ .fol{
+   display: flex;
+   justify-content: space-evenly;
+   margin-top: 40px;
+ }
+.followers{
+  background-color: green;
+  color: white;
+  flex: 0.3;
+  padding: 30px 20px;
+  border-radius: 8px;
+}
+.following{
+  background-color: red;
+  color: white;
+  flex: 0.3;  
+  padding: 30px 20px;
+  border-radius: 8px;
+}
+
