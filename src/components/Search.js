@@ -17,11 +17,19 @@ class Search extends Component{
   }
   
   onSubmit = (e)=>{
-      e.preventDefault();
-      this.props.searchValue(this.state.text)
-      this.setState({
-          text:''
-      })
+      if(this.state.text.trim() === "")
+      {  
+          e.preventDefault()
+        this.props.setAlert()
+      }
+      else{
+        e.preventDefault();
+        this.props.searchValue(this.state.text)
+        this.setState({
+            text:''
+        })
+      }
+     
   }
    
   clearData= () =>{
