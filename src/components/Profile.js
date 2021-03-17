@@ -2,11 +2,13 @@ import React ,{} from 'react'
 import '../App.css'
 import {Link} from 'react-router-dom'
 import Loader from '../components/Loader'
+import Repos from '../components/Repos'
 
 class Profile extends React.Component {
 
   componentDidMount(){
       this.props.getSingleUser(this.props.match.params.login);
+      this.props.repos(this.props.match.params.login);
   }
 
     render(){
@@ -55,7 +57,11 @@ class Profile extends React.Component {
     </div>
     
                        </div>
-                
+
+                    <div className="container">
+                        <Repos reposData={this.props.reposData} />
+                    </div>
+                 
                   </div>
               
                 

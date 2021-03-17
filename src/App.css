@@ -348,3 +348,25 @@
   border-radius: 8px;
 }
 
+
+.repos{
+  margin-top: 20px;
+  padding-bottom: 20px;
+}
+
+.repos-item ul li{
+
+  list-style-type: none;
+  background-color: #F0F0F0;
+  padding: 20px 10px;
+  margin-top: 10px;
+  border: solid 1px gray;
+}
+
+
+.repos-item a{
+  color: black;
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 20px;
+}

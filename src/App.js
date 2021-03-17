@@ -19,7 +19,8 @@ class App extends Component{
       users:[],
       loading:false,
       alert:false,
-      user:{}
+      user: {},
+      repos:[]
    }
    
    //  async componentDidMount(){
@@ -42,7 +43,7 @@ class App extends Component{
        this.setState({
           loading:false,
           users:[],
-     
+         
        })
        
     }
@@ -61,10 +62,19 @@ class App extends Component{
    getSingleUser = async (login) =>{
       this.setState({loading:true})
       const res  = await axios.get(`https://api.github.com/users/${login}?&client_id=${process.env.REACT_APP_GITHUB_CLIENT_ID}&client_secret=${process.env.REACT_APP_GITHUB_CLIENT_SECRETS}`);
-      console.log(res.data);
+   
 
       this.setState({user:res.data, loading:false})
-    }
+   }
+   
+
+   getRepos = async (userName) => {
+      this.setState({loading:true})
+      const res  = await axios.get(`https://api.github.com/users/${userName}/repos?per_page=10&sort=created:asc&client_id=${process.env.REACT_APP_GITHUB_CLIENT_ID}&client_secret=${process.env.REACT_APP_GITHUB_CLIENT_SECRETS}`);
+   
+
+      this.setState({repos:res.data, loading:false})
+   } 
    render(){
      return(
         <Router>
@@ -91,7 +101,7 @@ class App extends Component{
          <Route exact path='/profile/:login' render = {props =>{
             return(
                <Fragment>
-                      <Profile loading= {this.state.loading} getSingleUser = {this.getSingleUser} user={this.state.user}  {...props}/>
+                      <Profile reposData={this.state.repos} repos={this.getRepos} loading= {this.state.loading} getSingleUser = {this.getSingleUser} user={this.state.user}  {...props}/>
                          </Fragment>
                  
             ) }}
