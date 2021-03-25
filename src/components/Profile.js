@@ -1,19 +1,21 @@
-import React ,{} from 'react'
+import React ,{useEffect} from 'react'
 import '../App.css'
 import {Link} from 'react-router-dom'
 import Loader from '../components/Loader'
 import Repos from '../components/Repos'
 
-class Profile extends React.Component {
+const Profile  = ({getSingleUser,repos,match,user,loading,reposData}) => {
+    
+    useEffect(() => {
+        getSingleUser(match.params.login);
+        repos(match.params.login);
+    },[])
+   
+  
 
-  componentDidMount(){
-      this.props.getSingleUser(this.props.match.params.login);
-      this.props.repos(this.props.match.params.login);
-  }
-
-    render(){
-        const { bio,blog,followers, following , email, html_url,name,login , avatar_url} = this.props.user; 
-        if(this.props.loading){
+    
+        const { bio,blog,followers, following , email, html_url,name,login , avatar_url} = user; 
+        if(loading){
            return  <Loader />
 
         }
@@ -59,7 +61,7 @@ class Profile extends React.Component {
                        </div>
 
                     <div className="container">
-                        <Repos reposData={this.props.reposData} />
+                        <Repos reposData={reposData} />
                     </div>
                  
                   </div>
@@ -71,7 +73,7 @@ class Profile extends React.Component {
             )
         }
        
-    }
+    
 }
 
 export default Profile;

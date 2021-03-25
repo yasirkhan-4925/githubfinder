@@ -1,55 +1,49 @@
-import React , {Component} from 'react'
+import React , {Component,useState} from 'react'
 import '../App.css'
 
-class Search extends Component{
-
-    state ={
-        text:''
-    }
+ const Search  = ({setAlert,searchValue,clearUser,showData}) => {
+    
+     const [text,setText] = useState('')
+    
 
 
     
-  onChange = (e) =>{
-       this.setState({
-           [e.target.name] : e.target.value
-          
-       })
+   const onChange = (e) =>{
+       setText(e.target.value)
   }
   
-  onSubmit = (e)=>{
-      if(this.state.text.trim() === "")
+  const  onSubmit = (e)=>{
+      if(text.trim() === "")
       {  
           e.preventDefault()
-        this.props.setAlert()
+          setAlert()
       }
       else{
         e.preventDefault();
-        this.props.searchValue(this.state.text)
-        this.setState({
-            text:''
-        })
+       searchValue(text)
+        setText('')
       }
      
   }
    
-  clearData= () =>{
-      this.props.clearUser();
+  const clearData= () =>{
+     clearUser();
   }
 
-   render(){
-    const  {showData} = this.props
+ 
+  
        return(
            <div id="search"> 
-                   <form onSubmit={this.onSubmit} action="">
-                       <input onChange={this.onChange}  value={this.state.text} placeholder="Search here ..... " className="search-area" type="text" name="text"/>
+                   <form onSubmit={onSubmit} action="">
+                       <input onChange={onChange}  value={text} placeholder="Search here ..... " className="search-area" type="text" name="text"/>
                        <input  className="search-button" value="Search" type="submit"/>
                    </form>
-                   {showData &&  <button onClick={this.clearData} className="clear-button">Clear</button> }
+                   {showData &&  <button onClick={clearData} className="clear-button">Clear</button> }
                   
            </div>
            
        )
-   }
+   
 
 
 }

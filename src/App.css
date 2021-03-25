@@ -77,7 +77,7 @@
   margin-top: 15px;
   height: 300px;
 
-  width:300px;
+  width:30%;
   
   
   
@@ -352,7 +352,10 @@
 .repos{
   margin-top: 20px;
   padding-bottom: 20px;
+ 
+
 }
+
 
 .repos-item ul li{
 
@@ -369,4 +372,41 @@
   text-decoration: none;
   font-weight: bold;
   font-size: 20px;
+}
+
+
+@media(max-width:606px){
+  .profilebox{
+    flex-direction: column;
+  
+  }
+  .biodata{
+    margin-top: 10px;
+  }
+}
+
+@media(max-width:611px){
+  .fol{
+    flex-direction: column;
+  }
+
+
+ .following{
+   margin-top: 10px;
+ }
+ .repos{
+   display: flex;
+   flex-wrap: wrap;
+  
+ }
+ .repos-item{
+  
+   margin-left: 3px;
+ }
+}
+
+@media(max-width:531px){
+  .repos{
+    flex-direction: column;
+  }
 }
