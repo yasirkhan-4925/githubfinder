@@ -12,7 +12,7 @@ class Repos extends React.Component{
                  
                 {this.props.reposData.map((repo) => {
                     return (
-                           <ReposItem repo = {repo} />
+                           <ReposItem key = {repo.id} repo = {repo} />
                        )
                  })}
 

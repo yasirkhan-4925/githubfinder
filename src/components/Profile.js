@@ -1,14 +1,18 @@
-import React ,{useEffect} from 'react'
+import React ,{useEffect, useContext} from 'react'
 import '../App.css'
 import {Link} from 'react-router-dom'
 import Loader from '../components/Loader'
 import Repos from '../components/Repos'
+import GithubContext from '../context/github/githubContext'
 
-const Profile  = ({getSingleUser,repos,match,user,loading,reposData}) => {
+const Profile = ({  match}) => {
+    
+    const githubContext = useContext(GithubContext);
+    const {getSingleUser , user , loading ,getRepos ,repos} = githubContext
     
     useEffect(() => {
         getSingleUser(match.params.login);
-        repos(match.params.login);
+        getRepos(match.params.login);
     },[])
    
   
@@ -61,7 +65,7 @@ const Profile  = ({getSingleUser,repos,match,user,loading,reposData}) => {
                        </div>
 
                     <div className="container">
-                        <Repos reposData={reposData} />
+                        <Repos reposData={repos} />
                     </div>
                  
                   </div>
