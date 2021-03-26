@@ -8,7 +8,8 @@ import About from './components/About';
 import Profile from './components/Profile';
 import axios from 'axios'
 import {BrowserRouter as Router , Switch , Route} from 'react-router-dom'
-import Loader from './components/Loader'
+import Loader from './components/Loader';
+import GithubState from './context/github/GithubState'
 
 
 const App = () =>{
@@ -74,8 +75,10 @@ const App = () =>{
        setLoading(false);
    } 
   
-     return(
-        <Router>
+   return (
+      <GithubState>
+         <Router>
+            
         
       <div>
          <Navbar title="GitHub Finder" icon = "fab fa-github" />
@@ -113,10 +116,16 @@ const App = () =>{
         
         
         
-      </div>
-      </Router>
+            </div>
+          
+         </Router>
+         </GithubState>
+    
+       
+
 
      )
+   
    
 
 }
