@@ -410,3 +410,15 @@
     flex-direction: column;
   }
 }
+
+.not-found h1 {
+   font-size: 40px;
+   margin-top: 10px;
+   padding-left: 20px;
+}
+
+.not-found p {
+  font-size: 20px;
+  margin-top: 20px;
+  padding-left: 20px;
+}

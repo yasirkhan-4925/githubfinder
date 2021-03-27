@@ -6,6 +6,7 @@ import Search from './components/Search';
 import Alert from './components/Alert';
 import About from './components/About';
 import Profile from './components/Profile';
+import NotFound from './components/NotFound'
 
 import {BrowserRouter as Router , Switch , Route} from 'react-router-dom'
 import Loader from './components/Loader';
@@ -66,7 +67,8 @@ const App = () =>{
          
          <Route path='/about' exact component={About}/>
 
-         <Route exact path='/profile/:login' component={Profile} />
+                     <Route exact path='/profile/:login' component={Profile} />
+                      <Route  component={NotFound} />
            
 
         
